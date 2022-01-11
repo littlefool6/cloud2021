@@ -11,8 +11,8 @@ import java.util.UUID;
  * @ClassName PaymentController
  * @Description TODO
  * @Author zlguo
- * @Date 2021/11/29
- **/
+ * @Date 2022/1/11
+**/
 @RestController
 @RequestMapping("payment")
 @Slf4j
@@ -21,9 +21,8 @@ public class PaymentController {
     @Value("${server.port}")
     private String serverPort;
 
-    @RequestMapping(value = "zk")
-    public String paymentZk() {
-        return "spring cloud with zookeeper: " + serverPort + "\t" + UUID.randomUUID();
+    @RequestMapping(value = "consul")
+    public String paymentConsul() {
+        return "spring cloud with consul: " + serverPort + "\t" + UUID.randomUUID();
     }
-
 }
