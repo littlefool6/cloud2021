@@ -15,7 +15,7 @@ import org.springframework.web.client.RestTemplate;
 public class ApplicationContextBean {
 
     @Bean
-    @LoadBalanced
+    @LoadBalanced // 当使用带有负载均衡的restTemplate时，要使用服务名进行访问服务，所以接口/consumer/payment/consul/normal访问报错：No instances available for localhost
     public RestTemplate getRestTemplate() {
         return new RestTemplate();
     }
