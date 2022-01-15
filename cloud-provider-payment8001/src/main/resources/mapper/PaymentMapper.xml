@@ -16,4 +16,10 @@
         select * from payment where id = #{id};
     </select>
 
+    <insert id="saveList" parameterType="Payment" useGeneratedKeys="true" keyProperty="id">
+        insert into payment(serial) values
+        <foreach collection="paymentList" item="item" separator="," index="index">
+            (#{item.serial})
+        </foreach>
+    </insert>
 </mapper>

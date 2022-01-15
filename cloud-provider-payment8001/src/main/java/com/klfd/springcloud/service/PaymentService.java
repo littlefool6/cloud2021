@@ -2,6 +2,8 @@ package com.klfd.springcloud.service;
 
 import com.klfd.springcloud.entities.Payment;
 
+import java.util.List;
+
 /**
  * @ClassName PaymentService
  * @Description TODO
@@ -13,4 +15,6 @@ public interface PaymentService {
     int create(Payment payment);
 
     Payment getPaymentById(Long id);
+
+    int saveList(List<Payment> paymentList);
 }
