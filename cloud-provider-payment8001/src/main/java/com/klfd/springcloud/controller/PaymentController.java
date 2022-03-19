@@ -18,7 +18,7 @@ import java.util.concurrent.TimeUnit;
  * @Description TODO
  * @Author zlguo
  * @Date 2021/10/10
-**/
+ **/
 @RestController
 @RequestMapping("payment")
 @Slf4j
@@ -80,5 +80,10 @@ public class PaymentController {
             e.printStackTrace();
         }
         return serverPort;
+    }
+
+    @GetMapping("zipkin")
+    public String paymentZipkin() {
+        return "hi, i'm payment zipkin server fall back";
     }
 }

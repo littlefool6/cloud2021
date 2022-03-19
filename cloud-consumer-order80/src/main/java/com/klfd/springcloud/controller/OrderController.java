@@ -19,7 +19,7 @@ import java.util.List;
  * @Description TODO
  * @Author zlguo
  * @Date 2021/10/10
-**/
+ **/
 @RestController
 @RequestMapping("consumer")
 @Slf4j
@@ -67,5 +67,10 @@ public class OrderController {
         ServiceInstance serviceInstance = loadBalancer.instances(instanceList);
         URI uri = serviceInstance.getUri();
         return restTemplate.getForObject(uri + "/payment/lb", String.class);
+    }
+
+    @GetMapping("payment/zipkin")
+    public String paymentZipkin() {
+        return restTemplate.getForObject("http://localhost:8001" + "/payment/zipkin/", String.class);
     }
 }
